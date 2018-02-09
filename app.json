@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "BroadmoorOutfittersSmartWaivers",
-    "description": "Broadmoor Outiftters SmartWaiver Landing Page",
-    "slug": "BroadmoorOutfittersSmartWaivers",
+    "name": "ResortOutfittersSmartWaivers",
+    "description": "Resort Outiftters SmartWaiver Landing Page",
+    "slug": "ResortOutfittersSmartWaivers",
     "privacy": "unlisted",
     "sdkVersion": "25.0.0",
     "platforms": ["ios", "android"],

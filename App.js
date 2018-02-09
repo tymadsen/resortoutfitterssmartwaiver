@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation'
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Broadmoor Outfitters',
+    title: 'Resort Outfitters',
   };
 
   render() {
@@ -37,7 +37,7 @@ class HomeScreen extends React.Component {
 
 class WebViewScreen extends React.Component {
   static navigationOptions = {
-    title: 'Broadmoor Outfitters',
+    title: 'Resort Outfitters',
   };
   render() {
     const { state } = this.props.navigation;
