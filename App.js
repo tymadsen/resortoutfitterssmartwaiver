@@ -15,9 +15,9 @@ class HomeScreen extends React.Component {
       {title: "Falconry", url: 'bmoorfalconry'},
       {title: "Rock Climbing", url: 'bmoorrockclimbing'},
       {title: "Bubble Soccer", url: 'bmbubblesoccer'},
-      {title: "Unguided Bike Shuttle", url: 'bmoorunguided'},
       {title: "Paintball", url: 'bmoorpaintball'},
-      {title: "Bike Rental", url: 'bmoorbikerental'}
+      {title: "Bike Rental", url: 'bmoorbikerental'},
+      {title: "Unguided Bike Shuttle", url: 'bmoorunguided'}
     ];
 
     return (

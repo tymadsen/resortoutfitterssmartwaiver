@@ -10,7 +10,7 @@
     "orientation": "default",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/resort_outfitters_2014_png.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
