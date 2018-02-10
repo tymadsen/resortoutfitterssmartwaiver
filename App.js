@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, ScrollView, Dimensions, TouchableOpacity, Platform } from 'react-native';
 import { WebBrowser } from 'expo';
 
 const { height, width } = Dimensions.get('window');
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   image: {
-    height: height/3,
+    height: Platform.OS === 'ios' ? height/2.5 : height/3,
     resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'center'
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: Platform.OS === 'ios' ? 30 : 18,
     fontWeight: 'bold'
   }
 });
