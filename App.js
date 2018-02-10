@@ -1,16 +1,12 @@
 import React from 'react';
-import { Button, StyleSheet, View, Text, WebView, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
-import { StackNavigator } from 'react-navigation'
+import { StyleSheet, View, Text, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { WebBrowser } from 'expo';
 
 const { height, width } = Dimensions.get('window');
 
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Resort Outfitters',
-  };
+class App extends React.Component {
 
   render() {
-    const { navigate } = this.props.navigation;
     const urlData = [
       {title: "General", url: 'bmoorgeneral'},
       {title: "Laser Tag", url: 'bmoorlasertag'},
@@ -23,7 +19,7 @@ class HomeScreen extends React.Component {
     ];
 
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.content}>
         <ScrollView contentContainerSytle={styles.container}>
           <View style={styles.imageContainer}>
             <Image
@@ -35,7 +31,7 @@ class HomeScreen extends React.Component {
             return (<View key={idx}>
                 <TouchableOpacity
                   style={styles.button}
-                  onPress={() => navigate('Webview', { url: item.url })}
+                  onPress={() => this._handleButtonPressAsync(item.url)}
                 >
                   <Text style={styles.buttonText}> {item.title} </Text>
                 </TouchableOpacity>
@@ -46,29 +42,17 @@ class HomeScreen extends React.Component {
       </View>
     );
   }
-}
 
-class WebViewScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Resort Outfitters',
+  _handleButtonPressAsync = async (uri) => {
+    let result = await WebBrowser.openBrowserAsync('https://www.smartwaiver.com/v/'+uri);
   };
-  render() {
-    const { state } = this.props.navigation;
-    return (
-      <WebView
-        source={{uri: 'https://www.smartwaiver.com/v/'+state.params.url}}
-        style={{marginTop: 20}}
-      />
-    );
-  }
 }
-
-const App = StackNavigator({
-  Home: { screen: HomeScreen },
-  Webview: { screen: WebViewScreen },
-});
 
 const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    paddingTop: 20
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -87,7 +71,6 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   image: {
-    // width: width,
     height: height/3,
     resizeMode: 'contain',
     alignItems: 'center',
