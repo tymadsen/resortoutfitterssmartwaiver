@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button, StyleSheet, View, WebView } from 'react-native';
+import { Button, StyleSheet, View, Text, WebView, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
 import { StackNavigator } from 'react-navigation'
+
+const { height, width } = Dimensions.get('window');
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -21,15 +23,26 @@ class HomeScreen extends React.Component {
     ];
 
     return (
-      <View style={styles.container}>
-
-        {urlData.map((item, idx) => {
-          return (<View key={idx}>
-              <Button title={item.title} onPress={() => navigate('Webview', { url: item.url })} />
-              <View style={styles.spacer} />
-            </View>);
-        })}
-
+      <View style={{flex: 1}}>
+        <ScrollView contentContainerSytle={styles.container}>
+          <View style={styles.imageContainer}>
+            <Image
+            style={styles.image}
+            source={require('./assets/resort_outfitters.png')}
+            />
+          </View>
+          {urlData.map((item, idx) => {
+            return (<View key={idx}>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => navigate('Webview', { url: item.url })}
+                >
+                  <Text style={styles.buttonText}> {item.title} </Text>
+                </TouchableOpacity>
+                <View style={styles.spacer} />
+              </View>);
+          })}
+        </ScrollView>
       </View>
     );
   }
@@ -58,12 +71,36 @@ const App = StackNavigator({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     backgroundColor: '#fff',
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   spacer: {
     height: 10
+  },
+  imageContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+    marginTop: 10
+  },
+  image: {
+    // width: width,
+    height: height/3,
+    resizeMode: 'contain',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#009900',
+    padding: 10
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold'
   }
 });
 

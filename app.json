@@ -8,9 +8,9 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/resort_outfitters.png",
     "splash": {
-      "image": "./assets/resort_outfitters_2014_png.png",
+      "image": "./assets/resort_outfitters.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
