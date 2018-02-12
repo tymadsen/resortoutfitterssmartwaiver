@@ -3,42 +3,41 @@
     "name": "Broodmoor Outfitters",
     "logo": "./assets/BroadmoorOutfitters.png",
     "buttons": [
-      {"title": "General", "url": "bmoorgeneral"},
-      {"title": "Laser Tag", "url": "bmoorlasertag"},
-      {"title": "Falconry", "url": "bmoorfalconry"},
-      {"title": "Rock Climbing", "url": "bmoorrockclimbing"},
-      {"title": "Bubble Soccer", "url": "bmbubblesoccer"},
-      {"title": "Paintball", "url": "bmoorpaintball"},
-      {"title": "Bike Rental", "url": "bmoorbikerental"},
-      {"title": "Unguided Bike Shuttle", "url": "bmoorunguided"}
+      {title: "General", url: 'bmoorgeneral'},
+      {title: "Falconry", url: 'bmoorfalconry'},
+      {title: "Bike Rental", url: 'bmoorbikerental'},
+      {title: "Bike Tour", url: 'bmoorguidedbike'},
+      {title: "Rock Climbing", url: 'bmoorrockclimbing'},
+      {title: "Paintball", url: 'bmoorpaintball'},
+      {title: "Laser Tag", url: 'bmoorlasertag'},
+      {title: "Bike Shuttle", url: 'bmoorunguided'}
+
     ]
   },
   "greenbrieroutfitters": {
     "name": "GreenBrier Outfitters",
     "logo": "./assets/GBO_LOGO.png",
     "buttons": [
-      {"title": "General", "url": "bmoorgeneral"},
-      {"title": "Laser Tag", "url": "bmoorlasertag"},
-      {"title": "Falconry", "url": "bmoorfalconry"},
-      {"title": "Rock Climbing", "url": "bmoorrockclimbing"},
-      {"title": "Bubble Soccer", "url": "bmbubblesoccer"},
-      {"title": "Paintball", "url": "bmoorpaintball"},
-      {"title": "Bike Rental", "url": "bmoorbikerental"},
-      {"title": "Unguided Bike Shuttle", "url": "bmoorunguided"}
+      {title: "General", url: 'gbogeneral'},
+      {title: "Falconry", url: 'gbofalconry'},
+      {title: "Paddling Clinic", url: 'gbokayaking'},
+      {title: "Bike Rental", url: 'gbobikerental'},
+      {title: "Alpine Tower and Adventure Course", url: 'gboalpinetower'},
+      {title: "Greenbrier River Trail", url: 'gborivertrail'},
+      {title: "Paintball", url: 'gbopaintball'},
+      {title: "Guided Bike Ride", url: 'gboguidedbike'},
+      {title: "Bubble Soccer", url: 'gbobubblesoccer'}
+
     ]
   },
   "gasparillaadventures": {
     "name": "Gasparilla Adventures",
     "logo": "./assets/GIA_logov2.png",
     "buttons": [
-      {"title": "General", "url": "bmoorgeneral"},
-      {"title": "Laser Tag", "url": "bmoorlasertag"},
-      {"title": "Falconry", "url": "bmoorfalconry"},
-      {"title": "Rock Climbing", "url": "bmoorrockclimbing"},
-      {"title": "Bubble Soccer", "url": "bmbubblesoccer"},
-      {"title": "Paintball", "url": "bmoorpaintball"},
-      {"title": "Bike Rental", "url": "bmoorbikerental"},
-      {"title": "Unguided Bike Shuttle", "url": "bmoorunguided"}
+      {title: "Golf Carts", url: 'gagolfcarts'},
+      {title: "Bicycle, Kayak, & SUP", url: 'gabike'},
+      {title: "Guided Trips", url: 'gaguidedtrip'}
+
     ]
   }
 }

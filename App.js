@@ -102,7 +102,7 @@ class App extends React.Component {
     }
   };
 
-  _asyncGetLocationKey = async () => {
+  async _asyncGetLocationKey() {
     try {
       const key = await AsyncStorage.getItem('@ResortOutfitters:location');
       if (key !== null) {
