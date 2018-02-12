@@ -8,7 +8,7 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/resort_outfitters.png",
+    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/resort_outfitters.png",
       "resizeMode": "contain",
