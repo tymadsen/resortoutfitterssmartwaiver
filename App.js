@@ -92,10 +92,6 @@ class App extends React.Component {
   };
 
   _getLocationKey = () => {
-    // AsyncStorage.removeItem('@ResortOutfitters:location')
-    // .then(() => {})
-    // .catch(err => {console.log(err);});
-
     AsyncStorage.getItem('@ResortOutfitters:location')
     .then(key => {this.setState({locationKey: key});})
     .catch(err => {console.log(err);});
