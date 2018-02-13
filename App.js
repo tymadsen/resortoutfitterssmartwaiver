@@ -14,18 +14,12 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {locationKey: await this._asyncGetLocationKey()};
+    this.state = {};
   }
 
-  // setStateAsync(state) {
-  //   return new Promise((resolve) => {
-  //     this.setState(state, resolve);
-  //   });
-  // }
-
-  // async componentDidMount() {
-  //   this.setStateAsync()
-  // }
+  componentDidMount() {
+    this._getLocationKey();
+  }
 
   render() {
 
@@ -74,7 +68,7 @@ class App extends React.Component {
               return (<View key={idx}>
                   <TouchableOpacity
                     style={styles.button}
-                    onPress={() => this._asyncSetLocationKey(id)}
+                    onPress={() => this._setLocationKey(id)}
                   >
                     <Text style={styles.buttonText}> {data[id].name} </Text>
                   </TouchableOpacity>
@@ -87,36 +81,24 @@ class App extends React.Component {
     }
   };
 
-  _handleButtonPressAsync = async (uri) => {
-    let result = await WebBrowser.openBrowserAsync('https://www.smartwaiver.com/v/'+uri);
+  _handleButtonPressAsync = (uri) => {
+    WebBrowser.openBrowserAsync('https://www.smartwaiver.com/v/'+uri);
   };
 
-  _asyncSetLocationKey = async (id) => {
-    try {
-      await AsyncStorage.setItem('@ResortOutfitters:location', id);
-      this.setState({locationKey: id});
-    }
-    catch (error) {
-      console.log("An error occured: ");
-      console.log(error);
-    }
+  _setLocationKey = (id) => {
+    AsyncStorage.setItem('@ResortOutfitters:location', id)
+    .then(() => {this.setState({locationKey: id});})
+    .catch(err => {console.log(err);});
   };
 
-  _asyncGetLocationKey = async () => {
-    try {
-      const key = await AsyncStorage.getItem('@ResortOutfitters:location');
-      if (key !== null) {
-        return key;
-      }
-      else {
-        return null;
-      }
-    }
-    catch (error) {
-      console.log("An error occured: ");
-      console.log(error);
-      return null;
-    }
+  _getLocationKey = () => {
+    // AsyncStorage.removeItem('@ResortOutfitters:location')
+    // .then(() => {})
+    // .catch(err => {console.log(err);});
+
+    AsyncStorage.getItem('@ResortOutfitters:location')
+    .then(key => {this.setState({locationKey: key});})
+    .catch(err => {console.log(err);});
   };
 }
 

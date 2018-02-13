@@ -14,7 +14,7 @@
     ]
   },
   "greenbrieroutfitters": {
-    "name": "GreenBrier Outfitters",
+    "name": "Greenbrier Outfitters",
     "logo": "./assets/GBO_LOGO.png",
     "buttons": [
       {"title": "General", "url": "bmoorgeneral"},
