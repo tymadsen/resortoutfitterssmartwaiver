@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   image: {
-    height: Platform.OS === 'ios' ? height/2.5 : height/3,
+    height: Platform.OS === 'ios' ? height/2.5 : height/2.5,
     resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'center'
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
   buttonText: {
-    fontSize: Platform.OS === 'ios' ? 30 : 18,
+    fontSize: 30,//Platform.OS === 'ios' ? 30 : 18,
     fontWeight: 'bold'
   }
 });
