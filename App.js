@@ -101,7 +101,8 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    paddingTop: 20
+    paddingTop: 20,
+    backgroundColor: '#fff'
   },
   container: {
     flex: 1,
