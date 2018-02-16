@@ -1,6 +1,6 @@
 {
   "broadmooroutfitters": {
-    "name": "Broodmoor Outfitters",
+    "name": "Broadmoor Outfitters",
     "buttons": [
       {"title": "General", "url": "bmoorgeneral"},
       {"title": "Falconry", "url": "bmoorfalconry"},
