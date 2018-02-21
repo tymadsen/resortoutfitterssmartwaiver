@@ -20,7 +20,8 @@
       "icon": "./assets/resort_outfitters_icon_ios.png"
     },
     "android": {
-      "package": "com.resortoutfitters.smartwaivers"
+      "package": "com.resortoutfitters.smartwaivers",
+      "versionCode": 2
     }
   }
 }
