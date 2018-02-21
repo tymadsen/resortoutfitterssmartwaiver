@@ -17,7 +17,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.resortoutfitters.smartwaivers",
-      "icon": "./assets/resort_outfitters_icon_ios.png"
+      "icon": "./assets/resort_outfitters_icon_ios_store.png"
     },
     "android": {
       "package": "com.resortoutfitters.smartwaivers",
