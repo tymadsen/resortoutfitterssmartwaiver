@@ -36,5 +36,10 @@
       {"title": "Bicycle, Kayak, & SUP", "url": "gabike"},
       {"title": "Guided Trips", "url": "gaguidedtrip"}
     ]
+  },
+  "boarsheadoutfitters": {
+    "name": "Boars Head Outfitters",
+    "buttons": [
+    ]
   }
 }

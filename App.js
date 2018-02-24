@@ -7,7 +7,8 @@ const { height, width } = Dimensions.get('window');
 const logos = {
   "broadmooroutfitters": require("./assets/BroadmoorOutfitters.png"),
   "greenbrieroutfitters": require("./assets/GBO_LOGO.png"),
-  "gasparillaadventures": require("./assets/GIA_logov2.png")
+  "gasparillaadventures": require("./assets/GIA_logov2.png"),
+  "boarsheadoutfitters": require("./assets/resort_outfitters.png")
 }
 
 class App extends React.Component {
