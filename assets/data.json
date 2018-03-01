@@ -17,10 +17,10 @@
   "greenbrieroutfitters": {
     "name": "Greenbrier Outfitters",
     "buttons": [
-      {"title": "General", "url": "gbogeneral"},
       {"title": "Falconry", "url": "gbofalconry"},
       {"title": "Paddling Clinic", "url": "gbokayaking"},
       {"title": "Bike Rental", "url": "gbobikerental"},
+      {"title": "Mountaineer Experience", "url": "gbogeneral"},
       {"title": "Alpine Tower and Adventure Course", "url": "gboalpinetower"},
       {"title": "Greenbrier River Trail", "url": "gborivertrail"},
       {"title": "Paintball", "url": "gbopaintball"},
