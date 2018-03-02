@@ -22,7 +22,7 @@
     },
     "android": {
       "package": "com.resortoutfitters.smartwaivers",
-      "versionCode": 3
+      "versionCode": 4
     }
   }
 }
