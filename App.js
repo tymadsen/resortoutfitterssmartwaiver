@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, ScrollView, Dimensions, TouchableOpacity, Platform, AsyncStorage } from 'react-native';
-import { WebBrowser } from 'expo';
+import { StyleSheet, View, Text, Image, Vibration, ScrollView, CameraRoll, Dimensions, TouchableOpacity, Platform, AsyncStorage } from 'react-native';
+import { WebBrowser, Camera, Permissions, Constants, FileSystem } from 'expo';
+//import Camera from 'react-native-camera';
 
 const data = require('./assets/data.json');
 const { height, width } = Dimensions.get('window');
@@ -12,14 +13,49 @@ const logos = {
 }
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      permissionsGranted: null,
+      type: 'front',
+      flash: 'off',
+      autofocus: 'on',
+      photoID: 1,
+      photos: []
+    };
   }
 
-  componentDidMount() {
+async componentWillMount(){
+  const {status} = await Permissions.askAsync(Permissions.CAMERA);
+  this.setState({permissionsGranted: status === 'granted'});
+}
+
+  async componentDidMount() {
     this._getLocationKey();
+    FileSystem.makeDirectoryAsync(FileSystem.documentDirectory+'Smartwaiver/photos').catch(e=> {
+      console.log(e,'Directory exists');
+    });
+  }
+
+  takePicture = async function() {
+    if(this.camera) {
+      console.log('inside camera');
+      this.camera.takePictureAsync().catch(e=>{console.log(e);}).then(data=> {
+        CameraRoll.saveToCameraRoll(data.uri, 'photo${this.state.photoID}')
+        Console.log(data.uri);
+        Console.log('inside camera roll');
+        //FileSystem.copyAsync({
+          //from: data.uri,
+          //to: '${FileSystem.documentDirectory}photos/Photo_${this.state.photoID}.jpg'
+        }).then(() => {
+          this.setState({
+            photoID: this.state.photoID +1,
+          });
+          Vibration.vibrate();
+        //  });
+        });
+    }
+    console.log('picture taken');
   }
 
   render() {
@@ -48,6 +84,16 @@ class App extends React.Component {
                   </View>);
               })}
             </ScrollView>
+            <Camera
+              ref={ref=>{
+                this.camera=ref;
+              }}
+        //      aspect ={this.state.camera.aspect}
+        //      captureTarget={this.state.captureTarget}
+              style = {{display:'none'}}
+              type={this.state.type}
+              flashMode={this.state.flashMode}
+            />
           </View>
         );
       }
@@ -83,7 +129,8 @@ class App extends React.Component {
   };
 
   _handleButtonPressAsync = (uri) => {
-    WebBrowser.openBrowserAsync('https://www.smartwaiver.com/v/'+uri);
+      this.takePicture();
+      WebBrowser.openBrowserAsync('https://www.smartwaiver.com/v/'+uri);
   };
 
   _setLocationKey = (id) => {

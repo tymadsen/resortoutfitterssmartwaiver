@@ -6,7 +6,7 @@
     "privacy": "unlisted",
     "sdkVersion": "25.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.3.0",
+    "version": "2.0.0",
     "orientation": "default",
     "icon": "./assets/resort_outfitters_app_icon.png",
     "splash": {
@@ -18,11 +18,11 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.resortoutfitters.smartwaivers",
       "icon": "./assets/resort_outfitters_icon_ios_store.png",
-      "buildNumber": "1.3.0"
+      "buildNumber": "2.1.0"
     },
     "android": {
       "package": "com.resortoutfitters.smartwaivers",
-      "versionCode": 4
+      "versionCode": 5
     }
   }
 }
