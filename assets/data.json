@@ -42,6 +42,13 @@
   "boarsheadoutfitters": {
     "name": "Boars Head Outfitters",
     "buttons": [
+      {"title": "General", "url": "bhogeneral"},
+      {"title": "Bike Rentals", "url": "bhobikerental"},
+      {"title": "Rock Wall", "url": "bhoclimbing"},
+      {"title": "Falconry", "url": "bhofalconry"},
+      {"title": "Mountain Man Experience", "url": "bhogeneral"},
+      {"title": "Kayaking", "url": "bhokayak"},
+      {"title": "Paintball", "url": "bhopaintball"}
     ]
   }
 }
