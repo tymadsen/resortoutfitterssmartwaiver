@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, Vibration, ScrollView, CameraRoll, Dimensions, TouchableOpacity, Platform, AsyncStorage } from 'react-native';
-import { WebBrowser, Camera, Permissions, Constants, FileSystem } from 'expo';
+import { WebBrowser, Permissions, Constants, FileSystem } from 'expo';
 //import Camera from 'react-native-camera';
 
 const data = require('./assets/data.json');
@@ -25,17 +25,17 @@ class App extends React.Component {
     };
   }
 
-async componentWillMount(){
+//async componentWillMount(){
   // const {status} = await Permissions.askAsync(Permissions.CAMERA);
   // this.setState({permissionsGranted: status === 'granted'});
-}
+//}
 
-  async componentDidMount() {
+  //async componentDidMount() {
     // this._getLocationKey();
     // FileSystem.makeDirectoryAsync(FileSystem.documentDirectory+'Smartwaiver/photos').catch(e=> {
     //   console.log(e,'Directory exists');
     // });
-  }
+  //}
 
   // takePicture = async function() {
   //   if(this.camera) {
@@ -84,16 +84,6 @@ async componentWillMount(){
                   </View>);
               })}
             </ScrollView>
-        //     <Camera
-        //       ref={ref=>{
-        //         this.camera=ref;
-        //       }}
-        // //      aspect ={this.state.camera.aspect}
-        // //      captureTarget={this.state.captureTarget}
-        //       style = {{display:'none'}}
-        //       type={this.state.type}
-        //       flashMode={this.state.flashMode}
-        //     />
           </View>
         );
       }
